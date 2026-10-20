@@ -38,18 +38,18 @@
       object-fit: cover;
     }
 
-    /* Dark/Pinkish Overlay to make text readable over video */
+    /* Soft overlay */
     .video-overlay {
       position: fixed;
       top: 0;
       left: 0;
       width: 100%;
       height: 100%;
-      background: rgba(253, 242, 244, 0.85); /* Soft pink tint over video */
+      background: rgba(248, 225, 230, 0.65);
       z-index: -1;
     }
 
-    /* Floating background elements (Pandas, Cats & Hearts) */
+    /* Floating background elements */
     .bg-element {
       position: absolute;
       bottom: -10vh;
@@ -71,14 +71,16 @@
       }
     }
 
+    /* Changed from white to a gorgeous, cozy soft pink card background */
     .card {
-      background: #ffffff;
+      background: rgba(255, 240, 243, 0.95);
+      backdrop-filter: blur(10px);
       padding: 35px 25px;
       border-radius: 24px;
-      box-shadow: 0 15px 35px rgba(230, 57, 70, 0.15);
+      box-shadow: 0 15px 35px rgba(214, 40, 57, 0.18);
       max-width: 480px;
       width: 100%;
-      border: 2px solid #ffe3e8;
+      border: 2px solid #ffb3c1;
       box-sizing: border-box;
       position: relative;
       z-index: 10;
@@ -111,14 +113,14 @@
     }
 
     h1 {
-      color: #e63946;
+      color: #c9184a;
       font-size: 24px;
       margin-bottom: 20px;
       margin-top: 5px;
     }
 
     p {
-      color: #333333;
+      color: #2b2b2b;
       line-height: 1.7;
       font-size: 15px;
       margin-bottom: 16px;
@@ -138,13 +140,13 @@
     }
 
     .highlight {
-      background-color: #fff0f3;
+      background-color: rgba(255, 182, 193, 0.4);
       padding: 14px 18px;
-      border-left: 4px solid #e63946;
+      border-left: 4px solid #c9184a;
       border-radius: 8px;
       margin: 22px 0;
       font-size: 14.5px;
-      color: #4a4a4a;
+      color: #38040e;
       opacity: 0;
       animation: fadeIn 0.8s ease 0.9s forwards;
     }
@@ -152,10 +154,10 @@
     .footer-note {
       text-align: center;
       font-style: italic;
-      color: #777777;
+      color: #590d22;
       font-size: 13px;
       margin-top: 25px;
-      border-top: 1px dashed #ffd1d7;
+      border-top: 1px dashed #ffb3c1;
       padding-top: 15px;
       opacity: 0;
       animation: fadeIn 0.8s ease 1.5s forwards;
@@ -164,7 +166,7 @@
 </head>
 <body>
 
-  <!-- Background Video (Aesthetic Soft Aesthetic Loop) -->
+  <!-- Background Video Loop -->
   <div class="bg-video-container">
     <video autoplay muted loop playsinline class="bg-video">
       <source src="https://assets.mixkit.co/videos/preview/mixkit-soft-red-and-pink-lights-background-42171-large.mp4" type="video/mp4">
