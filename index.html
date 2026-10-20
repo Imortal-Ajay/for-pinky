@@ -6,7 +6,6 @@
   <title>A Message For You, Dora ❤️</title>
   <style>
     body {
-      background: linear-gradient(135deg, #fdf2f4 0%, #ffe6ec 100%);
       font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
       display: flex;
       justify-content: center;
@@ -18,21 +17,53 @@
       position: relative;
     }
 
+    /* Background Video Styles */
+    .bg-video-container {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: -2;
+      overflow: hidden;
+    }
+
+    .bg-video {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      min-width: 100%;
+      min-height: 100%;
+      object-fit: cover;
+    }
+
+    /* Dark/Pinkish Overlay to make text readable over video */
+    .video-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(253, 242, 244, 0.85); /* Soft pink tint over video */
+      z-index: -1;
+    }
+
     /* Floating background elements (Pandas, Cats & Hearts) */
     .bg-element {
       position: absolute;
       bottom: -10vh;
       font-size: 26px;
       animation: floatUp 7s linear infinite;
-      opacity: 0.5;
-      z-index: 0;
+      opacity: 0.6;
+      z-index: 1;
       user-select: none;
     }
 
     @keyframes floatUp {
       0% {
         transform: translateY(0) rotate(0deg);
-        opacity: 0.7;
+        opacity: 0.8;
       }
       100% {
         transform: translateY(-110vh) rotate(360deg);
@@ -44,7 +75,7 @@
       background: #ffffff;
       padding: 35px 25px;
       border-radius: 24px;
-      box-shadow: 0 15px 35px rgba(230, 57, 70, 0.12);
+      box-shadow: 0 15px 35px rgba(230, 57, 70, 0.15);
       max-width: 480px;
       width: 100%;
       border: 2px solid #ffe3e8;
@@ -96,7 +127,6 @@
       animation: fadeIn 0.8s ease forwards;
     }
 
-    /* Staggered fade-in for paragraphs */
     p:nth-child(2) { animation-delay: 0.3s; }
     p:nth-child(3) { animation-delay: 0.5s; }
     p:nth-child(4) { animation-delay: 0.7s; }
@@ -134,6 +164,14 @@
 </head>
 <body>
 
+  <!-- Background Video (Aesthetic Soft Aesthetic Loop) -->
+  <div class="bg-video-container">
+    <video autoplay muted loop playsinline class="bg-video">
+      <source src="https://assets.mixkit.co/videos/preview/mixkit-soft-red-and-pink-lights-background-42171-large.mp4" type="video/mp4">
+    </video>
+  </div>
+  <div class="video-overlay"></div>
+
   <!-- Floating Background Pandas, Cats, and Hearts -->
   <div class="bg-element" style="left: 8%; animation-duration: 6s; animation-delay: 0s;">🐼</div>
   <div class="bg-element" style="left: 25%; animation-duration: 8s; animation-delay: 2s;">🐱</div>
@@ -145,7 +183,7 @@
   <div class="card">
     <div class="header">
       <div class="cute-mascots">🐼 🩹 🐱</div>
-      <h1>I'm Truly Sorry, Dora</h1>
+      <h1>I's Truly Sorry, Dora</h1>
     </div>
     
     <p>Hey Doraa, I hope you are doing well.</p>
